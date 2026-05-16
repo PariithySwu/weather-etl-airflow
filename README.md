@@ -47,8 +47,9 @@ Implemented `DELETE BEFORE INSERT` logic within the pipeline. This guarantees **
    cd weather-etl-airflow
 
 2. **Set up Environment Variables:**
-   Create a .env file in the root directory and add your secure credentials (this file is git-ignored):
-   POSTGRES_USER=airflow
+
+Create a .env file in the root directory and add your secure credentials (this file is git-ignored):
+   ```POSTGRES_USER=airflow
    POSTGRES_PASSWORD=your_secure_password
    AIRFLOW__CORE__FERNET_KEY=your_generated_fernet_key
 
@@ -66,6 +67,8 @@ Turn on the toggle for the weather_etl_dag in the Airflow UI to start the automa
 ---
 
 ## 📂 Project Structure
+
+```text
 ├── dags/
 │   └── weather_etl_dag.py     # Airflow DAG definition and Python ETL logic
 ├── data/
@@ -79,7 +82,7 @@ Turn on the toggle for the weather_etl_dag in the Airflow UI to start the automa
 ├── docker-compose.yaml        # Docker infrastructure setup
 └── requirements.txt           # Python dependencies
 
----
+
 
 ### Author
 Pariyakorn Charumit 66102010174
