@@ -68,7 +68,7 @@ Turn on the toggle for the weather_etl_dag in the Airflow UI to start the automa
 
 
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 ├── dags/
@@ -84,6 +84,6 @@ Turn on the toggle for the weather_etl_dag in the Airflow UI to start the automa
 ├── docker-compose.yaml        # Docker infrastructure setup
 └── requirements.txt           # Python dependencies
 
-
+---
 
 Pariyakorn Charumit 66102010174
