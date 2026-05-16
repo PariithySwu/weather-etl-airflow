@@ -2,17 +2,17 @@
 
 An end-to-end Data Engineering project that automates the extraction, transformation, and loading (ETL) of Australian weather data into a PostgreSQL Data Warehouse using **Apache Airflow**.
 
-## 🎯 Project Overview
+## Project Overview
 This project simulates a daily batch-processing pipeline. It ingests historical weather data, performs data quality checks and transformations, and organizes the output into a **Star Schema** for optimized downstream analytics and Business Intelligence (BI) usage.
 
-## 🏗️ Architecture & Technologies
+## Architecture & Technologies
 * **Orchestration:** Apache Airflow
 * **Data Processing:** Python (Pandas)
 * **Data Warehouse:** PostgreSQL
 * **Infrastructure:** Docker & Docker Compose
 * **Version Control:** Git & GitHub
 
-## ✨ Key Features & Best Practices
+## Key Features & Best Practices
 
 ### 1. Data Modeling (Star Schema)
 Transformed raw flat files into a relational Star Schema to reduce data redundancy and optimize query performance:
@@ -31,7 +31,7 @@ Implemented `DELETE BEFORE INSERT` logic within the pipeline. This guarantees **
 * **Environment Variables:** Used `.env` and `.gitignore` to securely hide database credentials.
 * **Credential Management:** Leveraged Airflow's Connection UI with **Fernet Key Encryption** via `PostgresHook`, completely avoiding hardcoded passwords in the Python scripts.
 
----
+
 
 ## 🚀 Getting Started
 
@@ -47,14 +47,16 @@ Implemented `DELETE BEFORE INSERT` logic within the pipeline. This guarantees **
    cd weather-etl-airflow
 
 2. **Set up Environment Variables:**
-
-Create a .env file in the root directory and add your secure credentials (this file is git-ignored):
-   ```POSTGRES_USER=airflow
+   ```bash
+   # Create a .env file in the root directory and add your secure credentials (this file is git-ignored):
+   cat <<EOF > .env
+   POSTGRES_USER=airflow
    POSTGRES_PASSWORD=your_secure_password
    AIRFLOW__CORE__FERNET_KEY=your_generated_fernet_key
+   EOF
 
 3. **Start the Infrastructure:**
-   docker compose up -d
+   `docker compose up -d`
 
 4. **Configure Airflow Connection:**
 * Access the Airflow UI at http://localhost:8080 (Default login: airflow/airflow).
@@ -64,7 +66,7 @@ Create a .env file in the root directory and add your secure credentials (this f
 5. **Run the Pipeline:**
 Turn on the toggle for the weather_etl_dag in the Airflow UI to start the automated schedule or trigger it manually.
 
----
+
 
 ## 📂 Project Structure
 
@@ -84,5 +86,4 @@ Turn on the toggle for the weather_etl_dag in the Airflow UI to start the automa
 
 
 
-### Author
 Pariyakorn Charumit 66102010174
